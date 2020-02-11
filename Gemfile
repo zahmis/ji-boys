@@ -23,6 +23,7 @@ gem 'jbuilder',                '~> 2.5'
 # gem 'mini_magick',           '~> 4.8'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
