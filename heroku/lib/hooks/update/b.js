@@ -7,7 +7,7 @@ const fs = tslib_1.__importStar(require("../../file"));
 const debug = require('debug')('heroku:brewhook');
 function brew(args, opts = {}) {
     debug('brew %o', args);
-    return child_process_1.spawnSync('brew', args, Object.assign({ stdio: 'inherit' }, opts, { encoding: 'utf8' }));
+    return child_process_1.spawnSync('brew', args, Object.assign(Object.assign({ stdio: 'inherit' }, opts), { encoding: 'utf8' }));
 }
 exports.brewHook = async function () {
     if (this.config.platform !== 'darwin')
