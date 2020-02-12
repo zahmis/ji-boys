@@ -1,0 +1,5 @@
+sizma:
+ name: sizma y
+ email: meda829ratteru86@gmail.com
+ password_digest: <%= User.digest('password') %>
+ 
