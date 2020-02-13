@@ -27,7 +27,7 @@ textarea {
 .center {
     text-align: left;
     h1{
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
     }
 }
 
@@ -45,8 +45,8 @@ h2 {
     text-align: justify;
     font-weight: normal;
     color: #777;
-   
-    
+
+
 }
 
 /* header */
@@ -159,4 +159,18 @@ input,textarea,select,.uneditable-input{
 
 input{
   height:auto !important;
+}
+
+.checkbox{
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span{
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me{
+  width: auto;
+  margin-left: 0;
 }
