@@ -3,8 +3,6 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -41,12 +39,14 @@ h1{
 h2 {
     font-size: 1.2em;
     letter-spacing: -1px;
-    margin-bottom: 30px;
-    text-align: justify;
+    margin: 30px;
+    text-align: left;
     font-weight: normal;
-    color: #777;
+    color: #256;
+}
 
-
+.btn{
+  background-color: black;
 }
 
 /* header */
@@ -66,6 +66,12 @@ h2 {
     color: #fff;
     text-decoration:none;
 }
+
+.navbar{
+  /* 深緑　*/
+  background-color: #3b5e07;
+}
+
 
 /* footer */
 
