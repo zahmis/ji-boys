@@ -8,7 +8,7 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
-                              
+
     <%= render 'layouts/shim' %>
   </head>
   <body>
@@ -19,6 +19,8 @@
        <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+      <!-- <%= javascript_pack_tag 'hello_vue' %>
+      <%= stylesheet_pack_tag 'hello_vue' %> -->
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>

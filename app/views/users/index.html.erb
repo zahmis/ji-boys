@@ -1,0 +1,10 @@
+<% provide(:title, "隊員")  %>
+
+<div class="pagination">
+ <h1>隊員</h1>
+ <%= will_paginate %>
+ <ul class="users">
+   <%= render @users %>
+ </ul>
+  <%= will_paginate %>
+</div>
