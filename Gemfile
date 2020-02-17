@@ -19,12 +19,13 @@ gem 'turbolinks',              '~> 5'
 gem 'jbuilder',                '~> 2.5'
 # gem 'redis',                 '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt',                '~> 3.1.7'
-# gem 'mini_magick',           '~> 4.8'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n'
 gem 'webpacker', github: 'rails/webpacker'
+gem 'carrierwave'
+gem 'mini_magick',           '~> 4.8'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
