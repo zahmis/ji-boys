@@ -13,5 +13,8 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+      <%= f.label :image, 'image' %>
+      <%= f.file_field :image %>
+
       <%= f.submit "変更を保存する", class: "btn btn-primary" %>
     <% end %>

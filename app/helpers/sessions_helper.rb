@@ -5,6 +5,7 @@ module SessionsHelper
       session[:user_id] = user.id
     end
 
+    #引数のユーザーをrememberする
     def remember(user)
       user.remember
       cookies.permanent.signed[:user_id] = user.id
