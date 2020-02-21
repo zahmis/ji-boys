@@ -1,9 +1,14 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  storage :file
+
+  if Rails.env.production?
+    storage :fog #クラウドストレージ用S3（AWS）Configで設定
+  else
+    storage :file
+  end
 
   #画像リサイズ
-  process :resize_to_limit => [100,100]
+  process :resize_to_limit => [200,200]
 
   #jpg保存
   process :convert => 'jpg'
@@ -13,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  #拡張子、保存するファイルの種類を決める
+  #アップロード可能な拡張子、保存するファイルの種類を決める
   def extension_whitelist
    %w(jpg jpeg gif png)
   end

@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]) #usersテーブルから入力されたidを検索し＠userに渡しなさい
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new
@@ -51,28 +52,19 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :image,
+      params.require(:user).permit(:name, :email, :password, :image,
                                    :password_confirmation)
     end
 
     #beforeアクション
 
-    #ログイン済みかを確認
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインして下さい"
-        redirect_to login_url
-      end
-    end
-
-    #正しいユーザーかどうかを確認
+    #正しいユーザーかを確認
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless @user == current_user
     end
 
+    #管理者かを確認
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end

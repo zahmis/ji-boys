@@ -10,7 +10,7 @@ class UserTest < ActiveSupport::TestCase
                      image: "nitinan.jpeg")
   end
 
-  #　@userが有効かどうかをテスト
+  #@userが有効かどうかをテスト
   test "should be valid" do
     assert @user.valid?
   end
@@ -80,5 +80,14 @@ class UserTest < ActiveSupport::TestCase
   #ユーザーがnil digestの状態の時、認証がfalseで返されることをテスト
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?('')
+  end
+
+  #ユーザーを削除するとポストも削除されるか
+  test "associated posts should be destroyed" do
+    @user.save
+    @user.posts.create!(content: "例")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
   end
 end

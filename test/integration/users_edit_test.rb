@@ -39,14 +39,14 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal email, @user.email
     end
 
-    #ログインしていないときはリダイレクトする
+    #ログインしていないときはeditをリダイレクトする
     test "should redirect edit when not logged in" do
       get edit_user_path @user
       assert_not flash.empty?
       assert_redirected_to login_url
     end
 
-    #ログインしていないときはupdateにリダイレクトする
+    #ログインしていないときはupdateをリダイレクトする
     test "should redirect update when not logged in" do
       patch user_path @user, params: { user: {
                                         name: @user.name,

@@ -13,7 +13,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #不適切なUserとしてログインしたときeditページにリダイレクトする。
+  #不適切なUserとしてログインしたときeditをリダイレクトする。
   test "should redirect edit when logged in as wrong user" do
     log_in_as @other_user
     get edit_user_path @user
@@ -21,7 +21,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-  #不適切なUserとしてログインしたときupdateページにリダイレクトする。
+  #不適切なUserとしてログインしたときupdateをリダイレクトする。
   test "should redirect update when logged in as wrong user" do
     log_in_as @other_user
     patch user_path @user, params: {user: {
@@ -31,13 +31,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-  #ログインしていないときにindexページにリダイレクトする
+  #ログインしていないときにindexページをリダイレクトする
   test "should redirect index when not logged in" do
     get users_path
     assert_redirected_to login_url
   end
 
-  #ログインしていないときにupdateページにリダイレクトする
+  #ログインしていないときにupdateページをリダイレクトする
   test "should redirect update when not logged in" do
     patch user_path @user, params: {user: {
                                      name: @user.name,
@@ -57,7 +57,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_not @other_user.reload.admin?
    end
 
-    #ログインしていないときにdestroyにリダイレクトする
+    #ログインしていないときにdestroyをリダイレクトする
     test "should redirect destroy when not logged in" do
       assert_no_difference 'User.count' do
         delete user_path @user
@@ -65,7 +65,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       assert_redirected_to login_url
     end
 
-    #非管理者（一般ユーザー）でログインしているときにdestroyにリダイレクトする
+    #非管理者（一般ユーザー）でログインしているときにdestroyをリダイレクトする
     test "should redirect destroy when logged in as a non-admin" do
       log_in_as @other_user
       assert_no_difference 'User.count' do
@@ -73,5 +73,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       end
       assert_redirected_to root_url
     end
+
 
 end
