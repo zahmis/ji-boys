@@ -1,20 +1,20 @@
 <%= form_for( @user ) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+  <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.label :image, 'image' %>
-      <%= f.file_field :image %>
+  <%= f.label :image, 'image' %>
+  <%= f.file_field :image %>
 
-      <%= f.submit "変更を保存する", class: "btn btn-primary" %>
-    <% end %>
+  <%= f.submit "変更を保存する", class: "btn btn-primary" %>
+<% end %>
