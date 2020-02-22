@@ -22,7 +22,7 @@ gem 'jbuilder',                '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-i18n'
-gem 'webpacker', github: 'rails/webpacker'
+#gem 'webpacker', github: 'rails/webpacker'
 gem 'carrierwave'
 gem 'mini_magick',           '~> 4.8'
 
