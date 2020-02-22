@@ -1,6 +1,6 @@
 #CarrierWaveを通してS3を使うように修正する
 if Rails.env.production?
-  Carrier Wave.configure do |config|
+  CarrierWave.configure do |config|
     config.fog_credentials = {
       #S3用
       :provider =>'AWS',
