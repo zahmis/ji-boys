@@ -1,11 +1,12 @@
 <li id="post-<%= post.id %>">
 <% if @user.image_url %>
-  <%= link_to image_tag(@user.image_url, size:100), post.user %>
+  <%= link_to image_tag(@user.image_url, size:50), post.user %>
 <% end %>
 <span class="user">
 <%= link_to post.user.name, post.user %>
 </span>
 <span class="content">
+<%= post.title %>
 <%= post.content %>
 <% if post.image_url %>
 <%= image_tag post.image.url %>

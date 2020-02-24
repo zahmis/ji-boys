@@ -1,4 +1,6 @@
 <%= link_to image_tag(current_user.image.url, size: 100),current_user %>
-<h1><%= current_user.name %></h1>
-<span><%= link_to "プロフィールを見る", current_user %></span>
+<h1>
+<p>profile</p>
+<%= current_user.name %>
+</h1>
 <span><%= pluralize(current_user.posts.count, "post") %></span>
