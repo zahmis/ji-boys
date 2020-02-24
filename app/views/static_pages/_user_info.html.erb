@@ -1,4 +1,4 @@
-<%= link_to image_tag(current_user.image.url, size: 100),current_user %>
+<%= link_to image_tag(current_user.image.url, size: 100),current_user if current_user.image.present? %>
 <h1>
 <p>profile</p>
 <%= current_user.name %>
