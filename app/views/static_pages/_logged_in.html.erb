@@ -3,11 +3,14 @@
     <section class="user_info">
       <%= render 'static_pages/user_info' %>
     </section>
-
   </aside>
   <aside class="col-md-8">
-    <section class="post_form">
-      <%= render 'static_pages/post_form' %>
-    </section>
+    <% if @user.posts.any? %>
+      <h3>投稿記事(<%= @user.posts.count %>)</h3>
+      <ol class="posts">
+      <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
   </aside>
 </div>

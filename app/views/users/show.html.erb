@@ -13,12 +13,5 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user.posts.any? %>
-      <h3>投稿記事(<%= @user.posts.count %>)</h3>
-      <ol class="posts">
-      <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts %>
-    <% end %>
   </div>
 </div>

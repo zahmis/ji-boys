@@ -19,11 +19,11 @@ class UsersController < ApplicationController
     @posts = @user.posts.paginate(page: params[:page])
   end
 
-  def new
+  def new  #新規作成。ユーザページをサーバからGetする。
     @user = User.new
   end
 
-  def create
+  def create  #新規作成(newアクション)したら,createアクションで(post)投げる
     @user = User.new(user_params) #strong Parametersでマスアサインメントの脆弱性を防止    脆弱なコード @user = User.new(params[:user])
     if @user.save
       log_in @user
@@ -52,8 +52,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :image,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :image, :password_confirmation)
     end
 
     #beforeアクション
