@@ -6,6 +6,7 @@
       <div class="image">
        <div class="image_tag">
         <%= image_tag @user.image.url if @user.image.present? %>
+
        </div>
       </div>
        <%= @user.name %>
@@ -13,5 +14,6 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <%= render 'shared/article_show' %>
   </div>
 </div>

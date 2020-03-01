@@ -5,4 +5,9 @@ class StaticPagesController < ApplicationController
     @user = current_user
     @posts = @user.posts.paginate(page: params[:page]) if logged_in?
   end
+
+  def article
+    @post = current_user.posts.build if logged_in?
+  end
+
 end

@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class PostsInterfaceTest < ActionDispatch::IntegrationTest
+
   def setup
     @user = users(:sizma)
   end
