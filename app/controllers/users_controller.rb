@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page]) #usersテーブルから全てを＠usersに渡しなさい
+    @users = User.paginate(page: params[:page]) #ページねーと用　コントローラに設定
   end
 
   def show

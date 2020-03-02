@@ -3,13 +3,14 @@ class Post < ApplicationRecord
   default_scope -> {order(created_at: :desc)}
   mount_uploader :image, ImageUploader
   validates :user_id, presence: true
-  validates :content, presence: true
+  validates :title, presence: true
   validate :image_size
-end
+
 
 #画像サイズをバリデーションする
-def image_size
-  if image.size > 5.megabytes
-    errors.add(:image, "５MB以下にして下さい！")
-  end
+ def image_size
+   if image.size > 5.megabytes
+     errors.add(:image, "５MB以下にして下さい！")
+   end
+ end
 end
