@@ -4,7 +4,7 @@ class PostTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:sizma)
-    @post = @user.posts.build(content: "なぜ自衛隊に入ったのか")
+    @post = @user.posts.build(title: "なぜ自衛隊に入ったのか")
     #@post = Post.new(content: "なぜ自衛隊に入ったのか", user_id: @user.id)
   end
 
@@ -21,7 +21,7 @@ class PostTest < ActiveSupport::TestCase
 
   #contentが存在しているかどうか
   test "content should be present" do
-    @post.content = " "
+    @post.title = " "
     assert_not @post.valid?
   end
 
