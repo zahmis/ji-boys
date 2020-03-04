@@ -85,7 +85,7 @@ class UserTest < ActiveSupport::TestCase
   #ユーザーを削除するとポストも削除されるか
   test "associated posts should be destroyed" do
     @user.save
-    @user.posts.create!(title: "例")
+    @user.posts.create!(title: "例", content: "reiwa")
     assert_difference 'Post.count', -1 do
       @user.destroy
     end

@@ -4,7 +4,7 @@ class PostTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:sizma)
-    @post = @user.posts.build(title: "なぜ自衛隊に入ったのか")
+    @post = @user.posts.build(title: "なぜ自衛隊に入ったのか", content:"実は")
     #@post = Post.new(content: "なぜ自衛隊に入ったのか", user_id: @user.id)
   end
 

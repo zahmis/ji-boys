@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) #usersテーブルから入力されたidを検索し＠userに渡しなさい
+    @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
+    @questions = @user.questions.paginate(page: params[:page])
   end
 
   def new  #新規作成。ユーザページをサーバからGetする。
@@ -48,7 +49,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
 
     def user_params
@@ -56,7 +56,6 @@ class UsersController < ApplicationController
     end
 
     #beforeアクション
-
     #正しいユーザーかを確認
     def correct_user
       @user = User.find(params[:id])

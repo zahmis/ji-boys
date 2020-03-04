@@ -1,0 +1,7 @@
+<% if @user.questions.any? %>
+<h3>質問</h3>
+<ol class="questions">
+<%= render @questions %>
+</ol>
+<%= will_paginate @questions %>
+<% end %>

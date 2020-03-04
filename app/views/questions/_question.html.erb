@@ -1,0 +1,22 @@
+<h1>質問一覧</h1>
+<table class="table table-bordered border-primary table-hover table-sm posts_table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width: 40px">No.</th>
+      <th scope="col" style="width: 50px">image</th>
+      <th scope="col" style="width: 250px">タイトル</th>
+      <th scope="col" style="width: 100px">投稿者</th>
+      <th scope="col" style="width: 50px">投稿日</th>
+    </tr>
+<tbody>
+<tr>
+<% @questions.each do |question| %>
+    <th><%= question.id %></th>
+    <td><%= image_tag(question.user.image_url, size: 50) if question.user.image_url present? %></td>
+    <td><%= question.title %></td>
+    <td><%= question.user.name %></td>
+    <td><%= question.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+</tr>
+<% end %>
+</tbody>
+</table>

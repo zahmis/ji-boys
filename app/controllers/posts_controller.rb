@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     redirect_to request.referrer || root_url  #一つ前のURLを返すもしくはルートURLを返す
   end
 
-
   private
 
     def post_params

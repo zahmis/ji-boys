@@ -4,8 +4,8 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :user_id, presence: true
   validates :title, presence: true
+  validates :content, presence: true
   validate :image_size
-
 
 #画像サイズをバリデーションする
  def image_size
