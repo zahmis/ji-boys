@@ -1,21 +1,23 @@
-<li id="post-<%= post.id %>">
-<% if @user.image_url %>
-  <%= link_to image_tag(@user.image_url, size:50), post.user %>
+<h1>記事一覧</h1>
+<table class="table table-bordered border-primary table-hover table-sm posts_table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" style="width: 40px">No.</th>
+      <th scope="col" style="width: 50px">image</th>
+      <th scope="col" style="width: 250px">タイトル</th>
+      <th scope="col" style="width: 100px">投稿者</th>
+      <th scope="col" style="width: 50px">投稿日</th>
+    </tr>
+<tbody>
+<tr>
+  <% @posts.each do |post| %>
+    <th><%= post.id %></th>
+    <td><%= image_tag(post.user.image_url, size: 50) if post.user.image_url present? %></td>
+    <td><%= post.title %></td>
+    <td><%= post.user.name %></td>
+    <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+</tr>
 <% end %>
-<span class="user">
-<%= link_to post.user.name, post.user %>
-</span>
-<span class="content">
-<%= post.title %>
-<%= post.content %>
-<% if post.image_url %>
-  <%= image_tag post.image.url %>
-<% end %>
-</span>
-<span class="timestamp">
- Posted <%= time_ago_in_words(post.created_at) %>前
-  <% if current_user?(post.user) %>
-    <%= link_to "削除する", post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
-  <% end %>
-</span>
-</li>
+</tbody>
+</table>
+<%= will_paginate @posts %>

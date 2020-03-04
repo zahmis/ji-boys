@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
+
   def index
     @questions = Question.all.order(created_at: 'desc')
     @questions = Question.paginate(page: params[:page], per_page: 10)

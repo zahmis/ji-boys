@@ -1,11 +1,11 @@
 <aside class="col-md-8">
- <%= form_for(@question) do |q| %>
+ <%= form_for(@post) do |post| %>
    <div class="field">
-   <%= q.text_field :title, class: "form-control", placeholder: "タイトル" %>
-   <%= q.text_area :content, rows: 20, placeholder: "質問をする" %>
-   <%= q.submit "投稿", class: "btn btn-primary" %>
+   <%= post.text_field :title, class: "form-control", placeholder: "タイトル" %>
+   <%= post.text_area :content, rows: 20, placeholder: "投稿する" %>
+   <%= post.submit "投稿", class: "btn btn-primary" %>
    <span class="image">
-   <%= q.file_field :image, accept:'image/jpeg,image/gif,image/png' %>
+   <%= post.file_field :image, accept:'image/jpeg,image/gif,image/png' %>
    </span>
    </div>
  <% end %>

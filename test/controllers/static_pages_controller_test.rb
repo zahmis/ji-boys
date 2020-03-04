@@ -23,6 +23,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get article " do
     log_in_as(@user)
-    get article_path
+    get new_post_path
   end
 end
