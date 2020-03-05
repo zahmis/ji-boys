@@ -12,8 +12,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @questions = @user.questions.paginate(page: params[:page])
+    @questions = Question.find(params[:id])
+    @user = @questions.user
   end
 
   def create

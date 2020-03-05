@@ -12,8 +12,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = @user.posts.paginate(page: params[:page])
+    @posts = Post.find(params[:id])
+    @user = @posts.user
   end
 
   def create

@@ -1,6 +1,6 @@
 <li>
   <%= image_tag user.image.url if user.image.present? %>
-  <%= link_to user.name, user %>　<!--user.nameをuserに送り-->
+  <%= link_to user.name, user %>　<!--user.nameをuserに送る-->
   <% if current_user.admin? && !current_user?(user) %>
     <%= link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"} %>
   <% end %>
