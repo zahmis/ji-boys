@@ -1,8 +1,6 @@
-<div class="image">
   <div class="image_tag">
-    <%= link_to image_tag(@user.image.url, size: 100),@user if @user.image.present? %>
+    <%= link_to image_tag(@user.image.url, size: 200),@user if @user.image.present? %>
   </div>
-</div>
 
 <div class="row">
   <div class="col-sm-3 col-md-2 col-5">
