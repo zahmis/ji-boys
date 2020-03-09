@@ -1,6 +1,33 @@
-<%= link_to image_tag(current_user.image.url, size: 100),current_user if current_user.image.present? %>
-<h1>
-<p>profile</p>
-<%= current_user.name %>
-</h1>
-<span><%= pluralize(current_user.posts.count, "post") %></span>
+<div class="image">
+  <div class="image_tag">
+    <%= link_to image_tag(@user.image.url, size: 100),@user if @user.image.present? %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-md-2 col-5">
+    <label style="font-weight:bold;">Name</label>
+  </div>
+  <div class="col-md-8 col-6"><%= @user.name %></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-md-2 col-5">
+    <label style="font-weight:bold;">Age</label>
+  </div>
+  <div class="col-md-8 col-6"><%= @user.age %></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-md-2 col-5">
+    <label style="font-weight:bold;">Area</label>
+  </div>
+  <div class="col-md-8 col-6"><%= @user.area %></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3 col-md-2 col-5">
+    <label style="font-weight:bold;">Branch</label>
+  </div>
+  <div class="col-md-8 col-6"><%= @user.branch %></div>
+</div>

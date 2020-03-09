@@ -12,7 +12,6 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     get user_path(@user)
     assert_template 'users/show'
     assert_select 'title', full_title(@user.name)
-    assert_select 'h1', text: @user.name
-    assert_select 'h1>div.image>div.image_tag'
+    assert_select 'div.image>div.image_tag'
   end
 end

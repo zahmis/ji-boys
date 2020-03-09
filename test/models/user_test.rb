@@ -82,7 +82,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
-  #ユーザーを削除するとポストも削除されるか
+  #ユーザーを削除するとポストも削除されるかテスト
   test "associated posts should be destroyed" do
     @user.save
     @user.posts.create!(title: "例", content: "reiwa")

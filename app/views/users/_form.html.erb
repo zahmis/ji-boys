@@ -16,5 +16,14 @@
   <%= f.label :image, 'image' %>
   <%= f.file_field :image %>
 
+  <%= f.label :age %>
+  <%= f.text_field :age, class: 'form-control' %>
+
+  <%= f.label :area %>
+  <%= f.text_field :area, class: 'form-control' %>
+
+  <%= f.label :branch %>
+  <%= f.text_field :branch, class: 'form-control' %>
+
   <%= f.submit "変更を保存する", class: "btn btn-primary" %>
 <% end %>

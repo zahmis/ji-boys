@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params) #strong Parametersでマスアサインメントの脆弱性を防止
-      flash[:success] = "プロフィール変更完了"
+      flash[:success] = "基本情報変更完了"
       redirect_to @user
     else
       render 'edit'
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :image, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :image, :password_confirmation, :age, :area, :branch)
     end
 
     #beforeアクション

@@ -1,17 +1,9 @@
 <%= provide(:title, @user.name) %>
 
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user-info">
-      <h1>
-      <div class="image">
-       <div class="image_tag">
-        <%= image_tag @user.image.url if @user.image.present? %>
-       </div>
-      </div>
-      </h1>
-    </section>
-  </aside>
+  <div class="col-md-4">
+    <%= render 'static_pages/user_info' %>
+  </div>
   <div class="col-md-8">
     <%= render 'posts/post' if @posts.any? %>
     <%= render 'questions/question' if @questions.any? %>
