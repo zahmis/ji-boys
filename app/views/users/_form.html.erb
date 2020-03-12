@@ -2,28 +2,28 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.text_field :name, class: 'form-control', placeholder: "田中太郎" %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
+  <%= f.email_field :email, class: 'form-control',placeholder: "waihajieikan@example.com" %>
 
   <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
+  <%= f.password_field :password, class: 'form-control', placeholder: "パスワード(6文字以上)" %>
 
-  <%= f.label :password_confirmation, "Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
+  <%= f.label :password_confirmation, "パスワード確認" %>
+  <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワード確認" %>
 
-  <%= f.label :image, 'image' %>
+  <%= f.label :image, "プロフィール写真" %>
   <%= f.file_field :image %>
 
-  <%= f.label :age %>
-  <%= f.text_field :age, class: 'form-control' %>
+  <%= f.label :age, "年齢" %>
+  <%= f.text_field :age, class: 'form-control', placeholder: "23(任意)" %>
 
-  <%= f.label :area %>
-  <%= f.text_field :area, class: 'form-control' %>
+  <%= f.label :area, "方面" %>
+  <%= f.text_field :area, class: 'form-control', placeholder: "中部方面(任意)" %>
 
-  <%= f.label :branch %>
-  <%= f.text_field :branch, class: 'form-control' %>
+  <%= f.label :branch, "職種" %>
+  <%= f.text_field :branch, class: 'form-control', placeholder: "機甲科(任意)" %>
 
-  <%= f.submit "変更を保存する", class: "btn btn-primary" %>
+  <%= f.submit "登録", class: "btn btn-primary" %>
 <% end %>

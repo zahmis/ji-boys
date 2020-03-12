@@ -3,7 +3,7 @@ require 'test_helper'
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @base_title = "自衛隊に入隊したいけど不安な君へ"
+    @base_title = "これから自衛隊に入ることを考えている人のために"
     @user = users(:sizma)
   end
 

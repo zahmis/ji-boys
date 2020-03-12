@@ -11,43 +11,95 @@
 
 
 body{
-    padding-top: 60px;
+  padding-top: 60px;
+
 }
 
+.container{
+  .pagination{
+    display: inline;
+  }
+  h1{
+    text-align: center;
+  }
+}
 section{
-    overflow: auto;
+  overflow: auto;
   }
 
+
 textarea {
-    resize: vertical;
+  resize: vertical;
+  h1{
+    text-align: center;
+  }
 }
 
-.center {
-    text-align: left;
-    h1{
-        margin-bottom: 10px;
+
+.title{
+  h1{
+    margin: 10px 10px 10px 10px ;
     }
 }
 
-h1{
-    font-size: 3em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
+.part-img{
+  background-image: cover;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+
+  .btn{
+    background-color: black;
+    margin: 20px;
+  }
+  .link{
+    margin: 10px;
+  }
+
+  h1{
     text-align: center;
+  }
+}
+.center2{
+  padding: 30px;
+
+  .btn-outline-info{
+  font-size: 2.0em;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  }
+
+}
+
+
+.under {
+  text-align: center;
+  margin: 20px;
+  border: solid;
+  border-radius: 10px;
+
 }
 
 h2 {
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    margin: 30px;
-    text-align: left;
-    font-weight: normal;
-    color: #256;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin: 20px;
+  text-align: center;
+  font-weight: normal;
+  color: #256;
 }
 
-.btn{
-  background-color: black;
+.new-article{
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  border-bottom: ridge;
 }
+
 
 /* header */
 
@@ -142,14 +194,6 @@ aside{
   }
 }
 
-//.gravatar{
-//float: left;
-//margin-right: 10px;
-//}
-
-//.gravatar_edit{
-  //margin-top: 15px;
-//}
 
 .image{float: left;
   margin-right: 10px;
@@ -195,6 +239,7 @@ input{
   }
 }
 
+
 /* posts */
 
 .posts{
@@ -202,7 +247,7 @@ input{
   padding: 0;
   li{
     padding: 10px 0;
-     border-top: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
   }
 
   .user{
@@ -210,14 +255,25 @@ input{
     padding-top: 0;
   }
 
-  .row{
+
     .col-md-4{
       text-align: center;
     }
-  }
+
+    .col-md-8{
+      .private-post{
+        margin: 20px;
+      }
+      .title-post{
+        margin: 20px;
+      }
+    }
+
+
   .content{
     display: block;
     margin-left: 60px;
+
     img{
       display:block;
       padding: 5px 0;
@@ -234,5 +290,23 @@ input{
       height:100px;
       margin-bottom: 5px;
     }
+  }
+
+  .field{
+    text-align: center;
+  }
+}
+
+.private-post{
+
+  .title-post{
+    margin: 20px;
+    font-size: 20px;
+    border-bottom: ridge;
+  }
+
+  .content-post{
+    margin: 20px;
+    border-bottom: ridge;
   }
 }

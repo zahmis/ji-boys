@@ -1,5 +1,30 @@
-<div class="center ">
- <h1>自衛隊に入隊したいけど不安な君へ</h1>
-
- <%= link_to "もしかして入隊希望？", signup_path, class: "btn btn-lg btn-primary  center-block" %>
+<div class="title">
+  <h1>これから自衛隊に入ることを考えている人のために</h1>
 </div>
+<div class="part-img">
+  <img src="assets/kougun1.png" alt="">
+</div>
+<div class="center ">
+  <div class="link">
+  <%= link_to "もしかして入隊希望？", signup_path, class: "btn btn-lg btn-primary  center-block" %>
+  </div>
+</div>
+<div class="center2">
+  <input type="button" class="btn-outline-info" value="案内" onclick="clickBtn1()" />
+</div>
+<div class="under" id="annai">
+  <h2>このサイトは自衛隊に入隊するのを手助けすることを目的としています。</h2>
+  <h2>実際に入隊してからの体験談を読んだり,質問したりすることができます。</h2>
+  </div>
+<script>
+  'use strict';
+    document.getElementById('annai').style.display = 'none';
+    function clickBtn1() {
+      const annai = document.getElementById("annai");
+      if (annai.style.display=="block"){
+        annai.style.display = "none";
+      }else{
+        annai.style.display = "block";
+      }
+    }
+</script>

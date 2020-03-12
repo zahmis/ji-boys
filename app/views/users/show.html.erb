@@ -5,7 +5,7 @@
     <%= render 'static_pages/user_info' %>
   </div>
   <div class="col-md-8">
-    <%= render 'posts/post' if @posts.any? %>
-    <%= render 'questions/question' if @questions.any? %>
+    <%= render 'posts/post' if @user.posts.any? %>
+    <%= render 'questions/question' if @user.questions.any? %>
   </div>
 </div>
