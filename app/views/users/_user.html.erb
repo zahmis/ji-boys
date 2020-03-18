@@ -1,6 +1,25 @@
 <li>
-  <%= image_tag user.image.url if user.image.present? %>
-  <%= link_to user.name, user %>　<!--user.nameをuserに送る-->
+<% if user.image.present? %>
+  <div class="col-md-1"><%= image_tag(user.image.url,  size: "100x100", class: "img-circle") %>
+  </div>
+  <div class="col-md-3">
+    <ul>名前: <%= link_to user.name, user %></ul>
+    <ul>年齢: <%= user.age %></ul>
+    <ul>方面: <%= user.area %></ul>
+    <ul>職種: <%= user.branch  %></ul>
+  </div>
+
+<% else %>
+  <div class="col-md-1">
+  <%= image_tag("no_user.png", size: "100x100", class: "img-circle") %>
+  </div>
+  <div class="col-md-3">
+    <ul>名前: <%= link_to user.name, user %></ul>
+    <ul>年齢: <%= user.age %></ul>
+    <ul>方面: <%= user.area %></ul>
+    <ul>職種: <%= user.branch  %></ul>
+  </div>
+<% end %>
   <% if current_user.admin? && !current_user?(user) %>
     <%= link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"} %>
   <% end %>

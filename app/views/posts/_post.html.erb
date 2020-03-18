@@ -12,7 +12,7 @@
 <tr>
   <% @posts.each do |post| %>
     <th><%= post.id %></th>
-    <td><%= image_tag post.user.image.url, size: 50 if post.user.image.url present? %></td>
+    <td><%= image_tag(post.user.image.url, size: 50, class: "img-circle") if post.user.image.url present? %></td>
     <td><%= link_to post.title, post %></td>
     <td><%= post.user.name %></td>
     <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>

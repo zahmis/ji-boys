@@ -1,31 +1,31 @@
   <div class="image_tag">
-    <%= image_tag @user.image_url, size: 150 if @user.image_url.present? %>
+    <%= image_tag(@user.image_url, size: 150, class: "img-circle") if @user.image_url.present? %>
   </div>
 
 <div class="row">
   <div class="col-sm-3 col-md-2 col-5">
-    <label style="font-weight:bold;">Name</label>
+    <label style="font-weight:bold;">名前: </label>
   </div>
   <div class="col-md-8 col-6"><%= @user.name %></div>
 </div>
 
 <div class="row">
   <div class="col-sm-3 col-md-2 col-5">
-    <label style="font-weight:bold;">Age</label>
+    <label style="font-weight:bold;">年齢: </label>
   </div>
   <div class="col-md-8 col-6"><%= @user.age %></div>
 </div>
 
 <div class="row">
   <div class="col-sm-3 col-md-2 col-5">
-    <label style="font-weight:bold;">Area</label>
+    <label style="font-weight:bold;">方面: </label>
   </div>
   <div class="col-md-8 col-6"><%= @user.area %></div>
 </div>
 
 <div class="row">
   <div class="col-sm-3 col-md-2 col-5">
-    <label style="font-weight:bold;">Branch</label>
+    <label style="font-weight:bold;">職種: </label>
   </div>
   <div class="col-md-8 col-6"><%= @user.branch %></div>
 </div>
