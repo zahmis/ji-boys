@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :questions, dependent: :destroy
+  has_many :comments
   mount_uploader :image, ImageUploader
   attr_accessor :remember_token
   before_save {self.email = email.downcase }
