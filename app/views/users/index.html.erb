@@ -1,10 +1,9 @@
 <% provide(:title, "登録ユーザー") %>
 
 <div class="pagination">
- <h1>登録ユーザー</h1>
- <%= will_paginate %>
- <ul class="users">
-  <%= render @users %>
- </ul>
-  <%= will_paginate %>
+  <h1>登録ユーザー</h1>
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+      <%= will_paginate %>
 </div>

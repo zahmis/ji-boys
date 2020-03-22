@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page]) #ページねーと用　コントローラに設定
+    @users = User.paginate(page: params[:page], per_page:7) #ページネート用　コントローラに設定
   end
 
   def show
