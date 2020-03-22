@@ -6,7 +6,7 @@
       <h1>
       <div class="image">
         <div class="image_tag">
-          <%= image_tag @user.image.url if @user.image.present? %>
+          <%= image_tag(@user.image.url, size: 150, class: "img-circle") if @user.image.present? %>
         </div>
       </div>
       </h1>

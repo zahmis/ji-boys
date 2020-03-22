@@ -1,2 +1,8 @@
-<%= @questions.title %> <br>
-<%= @questions.content %>
+<div class="private-question">
+  <div class="title-question">
+    <%= simple_format(@question.title) %>
+  </div>
+  <div class="cotent-post">
+    <%= simple_format(@question.content) %>
+  </div>
+</div>

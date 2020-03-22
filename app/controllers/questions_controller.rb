@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all.order(created_at: 'desc')
-    @questions = Question.paginate(page: params[:page], per_page: 10)
+     @questions = Question.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -12,8 +12,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @questions = Question.find(params[:id])
-    @user = @questions.user
+    @question = Question.find(params[:id])
+    @user = @question.user
   end
 
   def create
