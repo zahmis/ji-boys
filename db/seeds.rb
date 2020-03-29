@@ -7,7 +7,8 @@ User.create!(name: "sizma",
              area: "北部方面",
              branch: "普通科",
              admin: "true",
-            )
+             activated: true,
+             activated_at: Time.zone.now)
 
 User.create!(name:  "田中　翔荘",
              email: "shouzoutanaka2020@gmail.com",

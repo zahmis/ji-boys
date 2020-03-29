@@ -79,7 +79,7 @@ class UserTest < ActiveSupport::TestCase
 
   #ユーザーがnil digestの状態の時、認証がfalseで返されることをテスト
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 
   #ユーザーを削除するとポストも削除されるかテスト

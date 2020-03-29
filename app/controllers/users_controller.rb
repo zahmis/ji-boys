@@ -24,12 +24,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create  #新規作成(newアクション)したら,createアクションで(post)投げる
-    @user = User.new(user_params) #strong Parametersでマスアサインメントの脆弱性を防止    脆弱なコード @user = User.new(params[:user])
+  def create
+    @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "ようこそ！"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render 'new'
     end
