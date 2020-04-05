@@ -10,7 +10,8 @@ User.create!(name: "sizma",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!(name:  "田中　翔荘",
+User.create!(id: 2,
+             name:  "田中　翔荘",
              email: "shouzoutanaka2020@gmail.com",
              password:              "foobar",
              password_confirmation: "foobar",
@@ -19,7 +20,8 @@ User.create!(name:  "田中　翔荘",
              area: "中部方面",
              branch: "特科")
 
-User.create!(name:  "sakatatu",
+User.create!(id: 3,
+             name:  "sakatatu",
              email: "sakatatu@waimail.com",
              password:              "foobar",
              password_confirmation: "foobar",
@@ -28,7 +30,8 @@ User.create!(name:  "sakatatu",
              area: "北部方面",
              branch: "普通科")
 
-User.create!(name:  "taikiyama",
+User.create!(id: 4,
+             name:  "taikiyama",
              email: "taikiyama@waimail.com",
              password:              "foobar",
              password_confirmation: "foobar",

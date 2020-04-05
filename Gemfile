@@ -25,7 +25,7 @@ gem 'rails-i18n'
 #gem 'webpacker', github: 'rails/webpacker'
 gem 'carrierwave'
 gem 'mini_magick',           '~> 4.8'
-
+gem 'mime-types'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
@@ -51,8 +51,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '~> 1.2', '>= 1.2.2'
-  gem 'fog', '2.0.0'
+  gem 'mysql2', '0.5.3'
+  gem 'fog-aws', '2.0.0'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
