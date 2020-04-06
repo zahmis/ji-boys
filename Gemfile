@@ -28,7 +28,7 @@ gem 'mini_magick',           '~> 4.8'
 gem 'mime-types'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
+  gem 'mysql2', '0.5.3'
   gem 'byebug', '9.0.6',platforms: [:mri, :mingw, :x64_mingw]
 end
 
