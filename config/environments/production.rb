@@ -72,13 +72,13 @@ Rails.application.configure do
   host = 'http://ji-boys.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'em6427.ji-boys.com',
-    :enable_starttls_auto => true
+    address: 'smtp.sendgrid.net',
+    port: '587',
+    authentication: 'plain',
+    user_name: 'apikey',
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'em6427.ji-boys.com',
+    enable_starttls_auto: true
   }
 
   config.i18n.fallbacks = true

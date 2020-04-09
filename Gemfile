@@ -27,6 +27,7 @@ gem 'carrierwave'
 gem 'mini_magick',           '~> 4.8'
 gem 'mime-types'
 gem 'dotenv-rails'
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'mysql2', '0.5.3'

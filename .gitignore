@@ -41,3 +41,6 @@ yarn-debug.log*
 
 #アップロードされたテスト画像を無視
 /public/uploads
+sendgrid.env
+sendgrid.env
+sendgrid.env
