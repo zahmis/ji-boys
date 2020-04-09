@@ -36,8 +36,8 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/secrets.yml
-/credentials.yml.enc
+/config/secrets.yml
+/config/credentials.yml.enc
 
 #アップロードされたテスト画像を無視
 /public/uploads
