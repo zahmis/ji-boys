@@ -8,16 +8,20 @@
       <th scope="col" style="width: 100px">投稿者</th>
       <th scope="col" style="width: 50px">投稿日</th>
     </tr>
-<tbody>
-<tr>
-  <% @posts.each do |post| %>
-    <th><%= post.id %></th>
-    <td><%= image_tag(post.user.image.url, size: 50, class: "img-circle") if post.user.image.url present? %></td>
-    <td><%= link_to post.title, post %></td>
-    <td><%= post.user.name %></td>
-    <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-</tr>
-<% end %>
-</tbody>
+  <tbody>
+    <tr>
+      <% @posts.each do |post| %>
+      <th><%= post.id %></th>
+      <td><%= image_tag(post.user.image.url, size: 50, class: "img-circle") if post.user.image.url present? %></td>
+      <td><%= link_to post.title, post %>
+        <% if current_user.admin? || current_user && post.user_id == current_user.id %>
+        <%= link_to "削除", post, method: :delete, data: {confirm: "本当に削除しますか？"}%>
+        <% end %>
+      </td>
+      <td><%= post.user.name %></td>
+      <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 <%= will_paginate @posts %>

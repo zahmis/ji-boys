@@ -3,25 +3,18 @@ class UsersController < ApplicationController
  before_action :correct_user, only:[:edit, :update]
  before_action :admin_user, only: :destroy
 
-
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "ユーザーは削除されました。"
-    redirect_to users_url
-  end
-
   def index
     @users = User.paginate(page: params[:page], per_page:7) #ページネート用　コントローラに設定
+  end
+
+  def new
+    @user = User.new
   end
 
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
     @questions = @user.questions.paginate(page: params[:page])
-  end
-
-  def new  #新規作成。ユーザページをサーバからGetする。
-    @user = User.new
   end
 
   def create
@@ -33,6 +26,12 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "ユーザーは削除されました。"
+    redirect_to users_url
   end
 
   def edit

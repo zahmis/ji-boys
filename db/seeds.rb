@@ -18,7 +18,9 @@ User.create!(id: 2,
              image: open("#{Rails.root}/db/fixtures/nyosintensei.jpeg"),
              age: "25",
              area: "中部方面",
-             branch: "特科")
+             branch: "特科",
+             activated: true,
+             activated_at: Time.zone.now)
 
 User.create!(id: 3,
              name:  "sakatatu",
