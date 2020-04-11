@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:index, :create, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :admin_user, only: :destroy
 
   def index
@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    correct_user
     Post.find(params[:id]).destroy
     flash[:success] = "投稿は削除されました"
     redirect_to request.referrer || root_url  #一つ前のURLを返すもしくはルートURLを返す
@@ -50,4 +51,5 @@ class PostsController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+
 end

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   #SessionHelperを読み込む
   include SessionsHelper
 
+
   private
 
   #ログイン済みかを確認
@@ -16,4 +17,5 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
 end

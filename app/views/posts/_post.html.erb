@@ -14,7 +14,7 @@
       <th><%= post.id %></th>
       <td><%= image_tag(post.user.image.url, size: 50, class: "img-circle") if post.user.image.url present? %></td>
       <td><%= link_to post.title, post %>
-        <% if current_user.admin? || current_user && post.user_id == current_user.id %>
+        <% if current_user && current_user.admin? || current_user && post.user_id == current_user.id %>
         <%= link_to "削除", post, method: :delete, data: {confirm: "本当に削除しますか？"}%>
         <% end %>
       </td>
