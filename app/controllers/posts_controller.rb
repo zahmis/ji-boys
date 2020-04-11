@@ -30,12 +30,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    correct_user
     Post.find(params[:id]).destroy
     flash[:success] = "投稿は削除されました"
     redirect_to request.referrer || root_url  #一つ前のURLを返すもしくはルートURLを返す
   end
-
 
   private
 

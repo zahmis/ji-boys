@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :logged_in_user, only: [:index, :create, :destroy]
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :admin_user, only: :destroy
 
   def index
     @questions = Question.all.order(created_at: 'desc')
@@ -26,6 +27,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    Question.find(params[:id]).destroy
+    flash[:success] = "質問は削除されました"
+    redirect_to request.referrer || root_url
+  end
+
   def edit
     @question = current_user.questions.build(question_params)
   end
@@ -40,12 +47,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def destroy
-    @question.destroy
-    flash[:success] = "質問は削除されました"
-    redirect_to request.referrer || root_url
-  end
-
   private
 
     def question_params
@@ -56,4 +57,9 @@ class QuestionsController < ApplicationController
       @question = current_user.questions.find_by(id:params[:id])
       redirect_to root_url if @post.nil?
     end
+
+     def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+
 end
