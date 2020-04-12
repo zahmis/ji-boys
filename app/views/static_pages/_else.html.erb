@@ -1,30 +1,101 @@
-<div class="title">
-  <h1>これから自衛隊に入ることを考えている人のために</h1>
-</div>
-<div class="part-img">
-  <img src="assets/kougun1.png" alt="">
-</div>
-<div class="center ">
-  <div class="link">
-  <%= link_to "もしかして入隊希望？", signup_path, class: "btn btn-lg btn-primary  center-block" %>
+<div class="container">
+  <div class="row">
+    <div class="title">
+      <h1>これから自衛隊に入ることを考えている人のために</h1>
+    </div>
+    <div class="col-lg-12">
+      <div class="part-img">
+        <img src="assets/kougun1.png" alt="行軍の写真です">
+      </div>
+    </div>
   </div>
-</div>
-<div class="center2">
-  <input type="button" class="btn-outline-info" value="案内" onclick="clickBtn1()" />
-</div>
-<div class="under" id="annai">
-  <h2>このサイトは自衛隊に入隊するのを手助けすることを目的としています。</h2>
-  <h2>実際に入隊してからの体験談を読んだり,質問したりすることができます。</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <input type="button" style="width: 75%;" class="btn-outline-info" padding: 100px; value="なぜこのサービスを作ったのか？" onclick="clickBtn1()" />
+      <script>
+        'use strict';
+        document.getElementById('annai').style.display = 'none';
+
+        function clickBtn1() {
+          const annai = document.getElementById("annai");
+          if (annai.style.display == "block") {
+            annai.style.display = "none";
+          } else {
+            annai.style.display = "block";
+          }
+        }
+      </script>
+      <div class="an" id="annai">
+        <p>私は現在教育関係職なのですが</p>
+        <p>意外にも『自衛隊に興味がある！』</p>
+        <p>といった生徒が多いことに驚きました。</p>
+        <p>しかし、自衛隊の情報はネット上などでも</p>
+        <p>偏った記事が多く、不安を煽るような</p>
+        <p>記事も少なくありません。</p>
+        <p>そこで経験者による体験談や実態を</p>
+        <p>聞いたり見たりすることで</p>
+        <p>自衛隊に対するハードルを下げれたらと思い</p>
+        <p>このサイトを立ち上げました。</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <input type="button" style="width: 72%;" class="btn-outline-info" padding: 100px; value="こういう人向けです！" onclick="clickBtn2()" />
+      <script>
+        'use strict';
+        document.getElementById('target').style.display = 'none';
+
+        function clickBtn2() {
+          const target = document.getElementById("target");
+          if (target.style.display == "block") {
+            target.style.display = "none";
+          } else {
+            target.style.display = "block";
+          }
+        }
+      </script>
+      <div class="tar" id="target">
+        <p>自衛隊に入隊したい！</p>
+        <p>でも不安もいっぱい！</p>
+        <p>自衛隊のことを知りたい！</p>
+        <p>自衛隊のご飯事情は？</p>
+        <p>自衛隊って訓練ばっかなの？</p>
+        <p>いじめとかあんの？</p>
+        <p>俺でもやっていけんの？</p>
+        <p>鬼軍曹ばっかりなの？</p>
+        <p>教育隊ってどれくらい脱落すんの？</p>
+        <p>自衛隊って何してんの？</p>
+        <p>という方</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <input type="button" style="width: 72%;" class="btn-outline-info" padding: 100px; value="このサイトについて" onclick="clickBtn3()" />
+      <script>
+        'use strict';
+        document.getElementById('site').style.display = 'none';
+
+        function clickBtn3() {
+          const target = document.getElementById("site");
+          if (site.style.display == "block") {
+            site.style.display = "none";
+          } else {
+            site.style.display = "block";
+          }
+        }
+      </script>
+      <div class="site" id="site">
+        <p>おかねかかるの？</p>
+        <p>かかりません。しかし、寄附してくださるのであれば快くお受けします！</p>
+        <p>新規登録しないとダメなの？</p>
+        <p>お願いします。あなたが本気なら、そこまで手間じゃないはずです！（それと悪質な書き込みを減らすためです！）</p>
+        <p>あんた自衛官なの？</p>
+        <p>元です。しかし、同期は現役です！！　仲良くしてくださっていた上官は退官されました！　仲の良い先輩とは今でも遊んだりします！ 後輩は大工になりました！</p>
+      </div>
+    </div>
   </div>
-<script>
-  'use strict';
-    document.getElementById('annai').style.display = 'none';
-    function clickBtn1() {
-      const annai = document.getElementById("annai");
-      if (annai.style.display=="block"){
-        annai.style.display = "none";
-      }else{
-        annai.style.display = "block";
-      }
-    }
-</script>
+  <div class="row">
+    <div class="link">
+      <%= link_to "もしかして入隊希望？", signup_path, class: "btn btn-lg btn-primary  center-block" %>
+    </div>
+  </div>
+
+</div>
