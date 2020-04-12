@@ -1,24 +1,50 @@
-# README
+## なぜこのサービスを作ろうと思ったのか
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+学校現場で働いていていると、子どもたちに将来の夢・やってみたいことを聞くことがよくあります。
 
-Things you may want to cover:
+その中で、意外にも自衛隊に興味がある生徒がけっこういました。
 
-* Ruby version
+しかし、ネット上では自衛隊の情報に関して本当のこともあればそうでないことも多く、不安を煽るような記事も多々みられた。
 
-* System dependencies
+なので、経験者が実際に現場はどうなのかを嘘偽りなく語ることのできる場があれば、入隊したいと考えている人の気持ちを後押しできると思いこのサービスを作成した。
 
-* Configuration
+## 本番環境
 
-* Database creation
+http://ji-boys.com
 
-* Database initialization
+## 機能一覧
 
-* How to run the test suite
+ルートユーザー機能
 
-* Services (job queues, cache servers, search engines, etc.)
+ユーザー登録機能、ログイン・ログアウト機能
 
-* Deployment instructions
+ユーザープロフィール画像アップロード機能
 
-* ...
+記事投稿機能(CRUD)
+
+記事詳細表示機能
+
+投稿内容へのコメント機能
+
+メール API によるアカウント認証機能
+
+## 使用技術
+
+HTML/CSS
+
+Bootstrap
+
+ruby 2.6.3
+
+Rails 5.2.4.1
+
+Git/Github
+
+AWS(VPC EC2 Route53 S3)
+
+Heroku
+
+## 今後の課題（随時更新）
+
+ユーザーが使用しやすいように、フロントを強化予定。
+ALB を導入し、常時 SSL 化予定。
