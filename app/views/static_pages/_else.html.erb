@@ -11,20 +11,7 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <input type="button" style="width: 75%;" class="btn-outline-info" padding: 100px; value="なぜこのサービスを作ったのか？" onclick="clickBtn1()" />
-      <script>
-        'use strict';
-        document.getElementById('annai').style.display = 'none';
-
-        function clickBtn1() {
-          const annai = document.getElementById("annai");
-          if (annai.style.display == "block") {
-            annai.style.display = "none";
-          } else {
-            annai.style.display = "block";
-          }
-        }
-      </script>
+      <input type="button" style="width: 72%;" class="btn-outline-info" value="なぜこのサービスを作ったのか？" onclick="clickBtn1()" />
       <div class="an" id="annai">
         <p>私は現在教育関係職なのですが</p>
         <p>意外にも『自衛隊に興味がある！』</p>
@@ -37,22 +24,25 @@
         <p>自衛隊に対するハードルを下げれたらと思い</p>
         <p>このサイトを立ち上げました。</p>
       </div>
-    </div>
-    <div class="col-md-4">
-      <input type="button" style="width: 72%;" class="btn-outline-info" padding: 100px; value="こういう人向けです！" onclick="clickBtn2()" />
       <script>
         'use strict';
-        document.getElementById('target').style.display = 'none';
+        document.getElementById("annai").style.display = "none";
 
-        function clickBtn2() {
-          const target = document.getElementById("target");
-          if (target.style.display == "block") {
-            target.style.display = "none";
+        function clickBtn1() {
+          const annai = document.getElementById("annai");
+
+          if (annai.style.display == "block") {
+            annai.style.display = "none";
           } else {
-            target.style.display = "block";
+            annai.style.display = "block";
           }
         }
       </script>
+
+    </div>
+    <div class="col-md-4">
+      <input type="button" style="width: 72%;" class="btn-outline-info" value="こういう人向けです！" onclick="clickBtn2()" />
+
       <div class="tar" id="target">
         <p>自衛隊に入隊したい！</p>
         <p>でも不安もいっぱい！</p>
@@ -66,9 +56,31 @@
         <p>自衛隊って何してんの？</p>
         <p>という方</p>
       </div>
+      <script>
+        'use strict';
+        document.getElementById("target").style.display = "none";
+
+        function clickBtn2() {
+          const target = document.getElementById("target");
+          if (target.style.display == "block") {
+            target.style.display = "none";
+          } else {
+            target.style.display = "block";
+          }
+        }
+      </script>
     </div>
     <div class="col-md-4">
-      <input type="button" style="width: 72%;" class="btn-outline-info" padding: 100px; value="このサイトについて" onclick="clickBtn3()" />
+      <input type="button" style="width: 72%;" class="btn-outline-info" value="このサイトについて" onclick="clickBtn3()" />
+
+      <div class="site" id="site">
+        <p>おかねかかるの？</p>
+        <p>かかりません。しかし、寄附してくださるのであれば快くお受けします！</p>
+        <p>新規登録しないとダメなの？</p>
+        <p>お願いします。あなたが本気なら、そこまで手間じゃないはずです！（それと悪質な書き込みを減らすためです！）</p>
+        <p>あんた自衛官なの？</p>
+        <p>元です。しかし、同期は現役です！！　仲良くしてくださっていた上官は退官されました！　仲の良い先輩とは今でも遊んだりします！ 後輩は大工になりました！</p>
+      </div>
       <script>
         'use strict';
         document.getElementById('site').style.display = 'none';
@@ -82,14 +94,6 @@
           }
         }
       </script>
-      <div class="site" id="site">
-        <p>おかねかかるの？</p>
-        <p>かかりません。しかし、寄附してくださるのであれば快くお受けします！</p>
-        <p>新規登録しないとダメなの？</p>
-        <p>お願いします。あなたが本気なら、そこまで手間じゃないはずです！（それと悪質な書き込みを減らすためです！）</p>
-        <p>あんた自衛官なの？</p>
-        <p>元です。しかし、同期は現役です！！　仲良くしてくださっていた上官は退官されました！　仲の良い先輩とは今でも遊んだりします！ 後輩は大工になりました！</p>
-      </div>
     </div>
   </div>
   <div class="row">
