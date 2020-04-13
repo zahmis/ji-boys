@@ -4,17 +4,21 @@
   </div>
   <div class="content-post">
     <%= simple_format(@post.content) %>
+    <%= image_tag(@post.image.url) if @post.image? %>
   </div>
   <div class="comment-wrapper border-top　mb-10">
     <p class="mt-5">コメント一覧</p>
     <% @comments.each do |c| %>
-      <%= simple_format(c.content) %>
+    <%= image_tag(@user.image_url, size: 50, class: "img-circle") %>
+    <%= c.user.name unless c.user.blank? %>
+    <br />
+    <%= simple_format(c.content) %>
     <% end %>
   </div>
-    <%= form_with(model: [@post, @comment], local: true) do |f| %>
-      <%= f.text_area :content, class: "form-control", rows: 5 %>
-      <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
-        <i class="far fa-comments"></i> コメントする
-      <% end %>
-    <% end %>
+  <%= form_with(model: [@post, @comment], local: true) do |f| %>
+  <%= f.text_area :content, class: "form-control", rows: 5 %>
+  <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
+  <i class="far fa-comments"></i> コメントする
+  <% end %>
+  <% end %>
 </div>

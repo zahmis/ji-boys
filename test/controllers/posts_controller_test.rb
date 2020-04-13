@@ -4,7 +4,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   def setup
     @post = posts(:orange)
+    @user = users(:sizma)
   end
+
   #createアクションはログイン済みの必要あり
   #ログインしていないときは　createアクションをリダイレクトする（ログインURLに戻す）
   test "should redirect create when not logged in" do
@@ -24,7 +26,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   #他のユーザーがポストを削除しようとすると適切にリダイレくとする
     test "should redirect destroy for wrong post" do
-      log_in_as(users(:sizma))
+      log_in_as @user
       post = posts(:ants)
       assert_no_difference 'Post.count' do
         delete post_path(post)

@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:index, :create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :admin_user, only: :destroy
+  impressionist :actions=> [:show, :index]
 
   def index
     @posts = Post.all.order(created_at: 'desc')
     @posts = Post.paginate(page: params[:page], per_page: 10)
+
   end
 
   def new
@@ -17,6 +19,7 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = @post.comments.build
     @user = @post.user
+    impressionist(@post, nil)
   end
 
   def create

@@ -28,6 +28,7 @@ gem 'mini_magick',           '~> 4.8'
 gem 'mime-types'
 gem 'dotenv-rails'
 gem 'sendgrid-ruby'
+gem 'impressionist'
 
 group :development, :test do
   gem 'mysql2', '0.5.3'
