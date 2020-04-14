@@ -9,7 +9,7 @@
   <div class="comment-wrapper border-top　mb-10">
     <p class="mt-5">コメント一覧</p>
     <% @comments.each do |c| %>
-    <%= image_tag(@user.image_url, size: 50, class: "img-circle") %>
+    <%= image_tag(c.user.image_url, size: 50, class: "img-circle") %>
     <%= c.user.name unless c.user.blank? %>
     <br />
     <%= simple_format(c.content) %>

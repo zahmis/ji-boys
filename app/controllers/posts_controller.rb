@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: 'desc')
+
     @posts = Post.paginate(page: params[:page], per_page: 10)
 
   end
@@ -15,9 +16,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:user).find(params[:id])
     @comments = @post.comments
-    @comment = @post.comments.build
+    @comment = @post.comments.build(user_id: current_user.id)
     @user = @post.user
     impressionist(@post, nil)
   end

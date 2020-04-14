@@ -23,8 +23,6 @@
       <td><%= post.user.name %></td>
       <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
       <td><%= post.impressionist_count(:filter=>:session_hash) %></td>
-
-
     </tr>
     <% end %>
   </tbody>
