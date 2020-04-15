@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validate :image_size
+  is_impressionable count_cache: true
 
 #画像サイズをバリデーションする
  def image_size

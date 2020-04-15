@@ -7,6 +7,8 @@
       <th scope="col" style="width: 250px">タイトル</th>
       <th scope="col" style="width: 100px">投稿者</th>
       <th scope="col" style="width: 50px">投稿日</th>
+      <th scope="col" style="width: 50px">閲覧回数</th>
+
     </tr>
   <tbody>
     <tr>
@@ -20,6 +22,7 @@
       </td>
       <td><%= post.user.name %></td>
       <td><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+      <td><%= post.impressionist_count(:filter=>:session_hash) %></td>
     </tr>
     <% end %>
   </tbody>
