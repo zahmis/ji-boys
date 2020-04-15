@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
         redirect_back_or user
       else
         message = "アカウントが無効です"
-        message += "Eメールを確認してください"
         flash[:warning] = message
         redirect_to root_url
       end
