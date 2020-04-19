@@ -6,15 +6,24 @@
     <%= simple_format(@post.content) %>
     <%= image_tag(@post.image.url) if @post.image? %>
   </div>
+
   <div class="comment-wrapper border-top　mb-10">
     <p class="mt-5">コメント一覧</p>
-    <% @comments.each do |c| %>
-    <%= image_tag(c.user.image_url, size: 50, class: "img-circle") %>
-    <%= c.user.name unless c.user.blank? %>
-    <br />
-    <%= simple_format(c.content) %>
+
+    <% @post.comments.each do |comment| %>
+    <div class="text-left">
+      <%= image_tag(comment.user.image_url, size: 50, class: "img-circle") if comment.user.image_url %>
+    </div>
+    <div class="text-left">
+      <%= comment.user.name %>
+    </div>
+    <%= simple_format(comment.content) %>
+    <% if current_user.admin? || current_user && comment.user_id == current_user.id %>
+    <%= link_to "削除", post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+    <% end %>
     <% end %>
   </div>
+
   <%= form_with(model: [@post, @comment], local: true) do |f| %>
   <%= f.text_area :content, class: "form-control", rows: 5 %>
   <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>

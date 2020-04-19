@@ -1,14 +1,12 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:show, :index, :create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :admin_user, only: :destroy
   impressionist :actions=> [:show, :index]
 
   def index
     @posts = Post.all.order(created_at: 'desc')
-
     @posts = Post.paginate(page: params[:page], per_page: 10)
-
   end
 
   def new
@@ -16,10 +14,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:user).find(params[:id])
-    @comments = @post.comments
-    @comment = @post.comments.build(user_id: current_user.id)
+    @post = Post.find_by(params[:post_id])
     @user = @post.user
+    @comment = Comment.new(user_id: current_user.id) #画像と名前付け足し
+    #@comments = @post.comments #Postからidを探し、それに紐づいたコメントを代入
+
     impressionist(@post, nil)
   end
 
@@ -53,5 +52,4 @@ class PostsController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
-
 end

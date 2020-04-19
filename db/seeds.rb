@@ -42,6 +42,18 @@ User.create!(id: 4,
              area: "西部方面",
              branch: "通信科")
 
+User.create!(id: 5,
+             name:  "フレッシュマン",
+             email: "testets@waimail.com",
+             password:              "testest",
+             password_confirmation: "testest",
+             age: "20",
+             area: "西部方面",
+             branch: "通信科")
+
+
+
+
 7.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@foobar.org"

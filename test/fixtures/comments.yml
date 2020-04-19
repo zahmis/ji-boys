@@ -4,10 +4,8 @@ one:
   content: MyString
   user: one
   post: one
-  question: one
 
 two:
   content: MyString
   user: two
   post: two
-  question: two

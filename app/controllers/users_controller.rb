@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
- before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+ before_action :forbid_test_user, {only: [:edit, :update, :destroy]}
+ before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
  before_action :correct_user, only:[:edit, :update]
  before_action :admin_user, only: :destroy
 
@@ -7,14 +8,14 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page], per_page:7) #ページネート用　コントローラに設定
   end
 
-  def new
-    @user = User.new
-  end
-
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
     @questions = @user.questions.paginate(page: params[:page])
+  end
+
+   def new
+    @user = User.new
   end
 
   def create
@@ -66,5 +67,13 @@ class UsersController < ApplicationController
     #管理者かを確認
     def admin_user
       redirect_to(root_url) unless current_user.admin?
+    end
+
+    def forbid_test_user
+      @user = User.find(params[:id])
+      if @user.name == "フレッシュマン"
+        flash[:danger] = "変更できません"
+        redirect_to root_path
+      end
     end
 end
