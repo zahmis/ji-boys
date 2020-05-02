@@ -102,5 +102,26 @@
       <%= link_to "もしかして入隊希望？", signup_path, class: "btn btn-lg btn-primary  center-block" %>
     </div>
   </div>
+  <div class="tenki">
+    <h3>東京都 <img src="http://openweathermap.org/img/wn/<%= @icon %>.png"> </h3>
+    <h3>
+      <font color="green">天気</font> <%= @today_tel %>
+    </h3>
+    <h3>
+      <font color="green">雲量</font> <%= @clouds %> %
+    </h3>
+    <h3>
+      <font color="green">気温</font> <%= @current_tem %>℃
+    </h3>
+    <h3>
+      <font color="green">風力</font> <%= @wind %> m/s
+    </h3>
+    <h3>
+      <font color="green">湿度</font> <%= @humidity %> %
+    </h3>
+    <h3>
+      <font color="green">演習点数</font> <%= (@wind_point + @humidity_point2 + @temp_point + @kion_point).floor(1) %> / 100
+    </h3>
+  </div>
 
 </div>
