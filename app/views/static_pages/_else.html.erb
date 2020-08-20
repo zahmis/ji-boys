@@ -102,6 +102,8 @@
       <%= link_to "もしかして入隊希望？", signup_path, class: "btn btn-lg btn-primary  center-block" %>
     </div>
   </div>
+  <%
+=begin%>
   <div class="tenki">
     <h3>東京都 <img src="http://openweathermap.org/img/wn/<%= @icon %>.png"> </h3>
     <h3>
@@ -123,5 +125,7 @@
       <font color="green">演習点数</font> <%= (@wind_point + @humidity_point2 + @temp_point + @kion_point).floor(1) %> / 100
     </h3>
   </div>
+  <%
+=end%>
 
 </div>
